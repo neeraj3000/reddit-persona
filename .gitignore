@@ -15,3 +15,7 @@ __pycache__/
 
 # Output files
 # user_persona_*.txt
+
+#Other files
+.devcontainer/
+*.log
