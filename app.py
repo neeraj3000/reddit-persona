@@ -10,24 +10,24 @@ from reddit_utils import extract_username, get_user_data
 from persona_chain import chain
 import os
 
-# ✅ Combine Reddit posts and comments into 1 string
+# Combine Reddit posts and comments into 1 string
 def build_reddit_text(posts, comments):
     combined = ""
     for p in posts:
         combined += f"[POST] {p['title']}\n{p['body']}\nURL: {p['url']}\n\n"
     for c in comments:
         combined += f"[COMMENT] {c['body']}\nURL: {c['url']}\n\n"
-    return combined[:10000]  # To avoid exceeding LLM input size
+    return combined[:17000]
 
-# ✅ Save result to a file
+# Save result to a file
 def write_to_file(persona_text, username):
     filename = f"user_persona_{username}.txt"
     with open(filename, "w", encoding="utf-8") as f:
         f.write(persona_text)
     return filename
 
-# ✅ Streamlit UI Setup
-st.set_page_config("🔎 Reddit Persona Builder", layout="centered")
+# Streamlit UI Setup
+st.set_page_config("Reddit Persona Builder", layout="centered")
 st.title("🧠 Reddit Persona Generator (LangChain + Groq Powered)")
 
 url = st.text_input("Paste Reddit Profile URL")
@@ -49,7 +49,7 @@ if st.button("Generate Persona"):
                     reddit_text = build_reddit_text(posts, comments)
                     result = chain.invoke(reddit_text)
 
-                    # ✅ Assume result is a markdown-formatted string
+                    # Assume result is a markdown-formatted string
                     if isinstance(result, dict) and "structured" in result:
                         persona_text = result["structured"]
                     elif isinstance(result, str):
@@ -65,11 +65,11 @@ if st.button("Generate Persona"):
             st.success("✅ Persona generated successfully!")
             st.markdown(persona_text)
 
-            # ✅ Download button
+            # Download button
             filename = write_to_file(persona_text, username)
             with open(filename, "rb") as f:
                 st.download_button(
-                    "📥 Download Persona",
+                    "📥 Download Persona!",
                     data=f,
                     file_name=filename,
                     mime="text/plain"
