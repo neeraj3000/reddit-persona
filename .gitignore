@@ -1,0 +1,17 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+
+# Bytecode and cache
+__pycache__/
+*.pyc
+
+# Streamlit config
+.streamlit/
+
+# Output files
+user_persona_*.txt
