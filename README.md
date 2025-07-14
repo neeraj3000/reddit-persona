@@ -100,12 +100,3 @@ Then open the link in your browser (usually http://localhost:8501)
 
 ---
 
-## 📸 Screenshot
-
-_Add a screenshot of your app in action here_
-
----
-
-## 📄 License
-
-MIT License — feel free to use, modify, and share.
