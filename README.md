@@ -16,9 +16,13 @@ This is an AI-powered web application that analyzes a Reddit user's posts and co
 
 ## 🚀 Demo
 
-Try it on your local machine 👇
+- **Live App**: [Try it now on Streamlit](https://reddit-persona.streamlit.app/)
 
 ---
+
+## 💻 Run Locally
+
+Want to test it on your machine? Follow the instructions below 👇
 
 ## 🔧 Tech Stack
 
