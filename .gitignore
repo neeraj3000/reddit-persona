@@ -14,4 +14,4 @@ __pycache__/
 .streamlit/
 
 # Output files
-user_persona_*.txt
+# user_persona_*.txt
